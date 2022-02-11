@@ -1,8 +1,10 @@
 import pandas as pd
 from mlxtend.frequent_patterns import apriori, association_rules
+from settings import dataset_path
+
 # Loading the dataset
-df = pd.read_excel("sogeh_aggcountrydata_allyears.xlsx",sheet_name='Data')
-codebook = pd.read_excel("sogeh_aggcountrydata_allyears.xlsx",sheet_name='Codebook')
+df = pd.read_excel(dataset_path, sheet_name='Data')
+codebook = pd.read_excel(dataset_path, sheet_name='Codebook')
 data=(df[df['Gender']!='Combined'])
 data = data.drop(['Subregion'], axis=1)
 data = data.groupby(['Region']).mean()

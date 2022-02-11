@@ -6,13 +6,10 @@ from dash.dependencies import Input, Output
 from plotly.validator_cache import ValidatorCache
 from plotly.graph_objects import Layout
 from apriori import ar as ap
+from settings import dataset_path
 
 darkblue_color_palette = ["#00183d", "#002a69", "#003f9a", "#005ccf", "#007eff", "#49b3ff", "#75c8ff", "#8fd8ff"]
-
 skyblue_color_palette = ["#005ccf", "#007eff", "#49b3ff", "#75c8ff", "#8fd8ff", "#b5e6ff", "#dcf0fa", "#f2fbff"]
-
-dataset_path  = "https://data.humdata.org/dataset/504fce69-12c2-4c56-ada2-3173c663107a/resource/05b255c4-56fe-4986-ba76-f8f35ac6a7e1/download/sogeh_aggcountrydata_allyears.xlsx"
-# dataset_path  = "sogeh_aggcountrydata_allyears.xlsx"
 
 codebook = pd.read_excel(dataset_path, sheet_name="Codebook")
 df = pd.read_excel(dataset_path, sheet_name="Data")
