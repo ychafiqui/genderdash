@@ -7,5 +7,5 @@ The Gender Equality Analytics Dashboard is a web-based analytic application that
 
 ## Demo
 
-## webapp
+## Webapp link
 http://genderdash.pythonanywhere.com/
