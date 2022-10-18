@@ -11,7 +11,6 @@ data = data.groupby(['Region']).mean()
 data.reset_index(inplace=True)
 data = data.drop(['Region','Year'], axis=1)
 data=data.dropna(how='any',axis=1)
-#data.to_csv('Idea.ys.csv',index=False)
 
 # delete variable name (codebook) if not exist in data
 ind=[]
@@ -47,7 +46,6 @@ def prepare_data_for_apriori(df,list):
         k=0
         while (j<len(df.columns) and k<len(list)) :
             for x in range(list[k]):
-                # if(df.iloc[i,j:j+list[k]].max().max() == df.iloc[i,j+x]):
                 if(df.iloc[i,j:j+list[k]].max() == df.iloc[i,j+x]):
                     dff.iloc[i,j+x]=1
                 else:
